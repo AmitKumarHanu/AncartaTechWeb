@@ -46,6 +46,14 @@ export default function Contact() {
       newErrors.message = 'Message must be at least 10 characters long';
     }
 
+    if (formData.phone.trim()) {
+      const phoneRegex = /^\+?[1-9]\d{1,14}$/;
+      const cleanPhone = formData.phone.replace(/[-\s()]/g, '');
+      if (!phoneRegex.test(cleanPhone)) {
+        newErrors.phone = 'Please enter a valid phone number format (e.g., +918755910457)';
+      }
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -167,9 +175,14 @@ export default function Contact() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-violet-500"
-                    placeholder="+1 (555) 123-4567"
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.phone ? 'border-red-500' : 'border-gray-300'
+                    } focus:outline-none focus:ring-2 focus:ring-violet-500`}
+                    placeholder="+918755910457"
                   />
+                  {errors.phone && (
+                    <p className="mt-1 text-sm text-red-600">{errors.phone}</p>
+                  )}
                 </div>
 
                 <div>
@@ -252,7 +265,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+918755910457</p>
                   </div>
                 </div>
 
