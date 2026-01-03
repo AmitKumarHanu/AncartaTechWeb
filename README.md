@@ -22,7 +22,7 @@ A fully functional, responsive corporate website for Ancarta Technologies Pvt. L
 
 ### Colors
 - **Primary**: Deep Blue (#1e40af)
-- **Secondary**: Dark Gray (#374151)
+- **Secondary**: Cool Gray (#374151)
 - **Accent**: Cyan (#06b6d4)
 - **Success**: Green (#10b981)
 

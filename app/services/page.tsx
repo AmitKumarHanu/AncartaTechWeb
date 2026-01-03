@@ -150,7 +150,7 @@ export default function Services() {
                 { step: '04', title: 'Deployment', description: 'Testing, launch, and ongoing support' }
               ].map((phase, index) => (
                 <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-violet-700 text-white rounded-full text-2xl font-bold mb-4">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-700 text-white rounded-full text-2xl font-bold mb-4">
                     {phase.step}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{phase.title}</h3>
@@ -162,19 +162,19 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-violet-700 to-teal-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-700 to-cyan-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Start Your Project?
           </h2>
-          <p className="text-xl text-violet-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Let&apos;s discuss your requirements and build a solution that drives real business value.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-violet-700 bg-transparent">
+            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-700 bg-transparent">
               Contact Us Today
             </Button>
-            <Button href="/about" variant="outline" className="border-white text-white hover:bg-white hover:text-violet-700 bg-white text-violet-700">
+            <Button href="/about" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-700 bg-white text-blue-700">
               Learn More About Us
             </Button>
           </div>

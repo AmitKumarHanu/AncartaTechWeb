@@ -151,13 +151,13 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Why Choose <span className="text-violet-700">Ancarta</span>
+            Why Choose <span className="text-blue-700">Ancarta</span>
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {trustIndicators.map((indicator, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-br from-violet-50 to-teal-50 rounded-xl">
-                <div className="text-4xl md:text-5xl font-bold text-violet-700 mb-2">
+              <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl">
+                <div className="text-4xl md:text-5xl font-bold text-blue-700 mb-2">
                   {indicator.number}
                 </div>
                 <div className="text-gray-600 font-medium">{indicator.label}</div>
@@ -176,7 +176,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <svg className="h-10 w-10 text-teal-500 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-10 w-10 text-cyan-500 mb-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
                 <p className="text-gray-700 mb-6 italic leading-relaxed">
@@ -192,19 +192,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-violet-700 to-teal-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-700 to-cyan-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-violet-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Let&apos;s discuss how our custom software solutions can help you achieve your business goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-violet-700 bg-transparent">
+            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-700 bg-transparent">
               Get in Touch
             </Button>
-            <Button href="/services" variant="outline" className="border-white text-white hover:bg-white hover:text-violet-700 bg-white text-violet-700">
+            <Button href="/services" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-700 bg-white text-blue-700">
               View All Services
             </Button>
           </div>

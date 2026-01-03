@@ -21,9 +21,9 @@ export default function Button({
   const baseStyles = 'px-6 py-3 rounded-lg font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 inline-block text-center';
   
   const variantStyles = {
-    primary: 'bg-violet-700 text-white hover:bg-violet-800 shadow-lg hover:shadow-xl',
-    secondary: 'bg-teal-500 text-white hover:bg-teal-600 shadow-lg hover:shadow-xl',
-    outline: 'border-2 border-violet-700 text-violet-700 hover:bg-violet-700 hover:text-white',
+    primary: 'bg-blue-700 text-white hover:bg-blue-800 shadow-lg hover:shadow-xl',
+    secondary: 'bg-cyan-500 text-white hover:bg-cyan-600 shadow-lg hover:shadow-xl',
+    outline: 'border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white',
   };
 
   const combinedStyles = `${baseStyles} ${variantStyles[variant]} ${className}`;
