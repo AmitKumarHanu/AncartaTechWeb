@@ -250,7 +250,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       <article className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <Link href="/blog" className="inline-flex items-center text-blue-700 hover:text-cyan-600 mb-8 font-semibold">
+            <Link href="/blog" className="inline-flex items-center text-violet-700 hover:text-teal-600 mb-8 font-semibold">
               <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
@@ -258,7 +258,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </Link>
 
             <div className="mb-8">
-              <div className="inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">
+              <div className="inline-block bg-violet-100 text-violet-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">
                 {post.category}
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -294,7 +294,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                   href={`/blog/${relatedPost.slug}`}
                   className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  <div className="text-sm text-blue-700 font-semibold mb-2">
+                  <div className="text-sm text-violet-700 font-semibold mb-2">
                     {relatedPost.category}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">

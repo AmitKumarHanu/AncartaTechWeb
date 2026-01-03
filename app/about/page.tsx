@@ -76,7 +76,7 @@ export default function About() {
             
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                <span className="font-semibold text-blue-700">Ancarta Technologies Pvt. Ltd.</span> is a leading provider of IT consulting and custom software development services. Founded with a vision to bridge the gap between business challenges and technology solutions, we have grown into a trusted partner for startups, SMEs, and enterprise clients across the globe.
+                <span className="font-semibold text-violet-700">Ancarta Technologies Pvt. Ltd.</span> is a leading provider of IT consulting and custom software development services. Founded with a vision to bridge the gap between business challenges and technology solutions, we have grown into a trusted partner for startups, SMEs, and enterprise clients across the globe.
               </p>
               
               <p>
@@ -100,7 +100,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {missionVisionValues.map((item, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg mb-6 text-white mx-auto">
+                <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-violet-500 to-teal-500 rounded-lg mb-6 text-white mx-auto">
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">{item.title}</h3>
@@ -119,9 +119,9 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {coreValues.map((value, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors duration-300">
+              <div key={index} className="flex items-start space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-violet-50 transition-colors duration-300">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-700 text-white rounded-lg font-bold text-xl">
+                  <div className="flex items-center justify-center w-12 h-12 bg-violet-700 text-white rounded-lg font-bold text-xl">
                     {index + 1}
                   </div>
                 </div>
@@ -135,19 +135,19 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-blue-700 to-cyan-600 text-white">
+      <section className="py-16 bg-gradient-to-br from-violet-700 to-teal-600 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Our Approach
             </h2>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+            <p className="text-xl text-violet-100 mb-8 leading-relaxed">
               We believe in building long-term partnerships with our clients. Our collaborative approach ensures that we not only understand your current needs but also anticipate future challenges. We combine technical excellence with business strategy to deliver solutions that provide real value and competitive advantage.
             </p>
-            <p className="text-lg text-blue-100 mb-10">
+            <p className="text-lg text-violet-100 mb-10">
               Whether you&apos;re a startup looking to build your MVP, an SME seeking to modernize your systems, or an enterprise requiring complex integrations, we have the expertise and experience to help you succeed.
             </p>
-            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-700 bg-transparent">
+            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-violet-700 bg-transparent">
               Let&apos;s Work Together
             </Button>
           </div>

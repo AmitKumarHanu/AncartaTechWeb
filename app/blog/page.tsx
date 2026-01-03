@@ -74,7 +74,7 @@ export default function Blog() {
                   key={index} 
                   className="bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
                 >
-                  <div className="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                  <div className="h-48 bg-gradient-to-br from-violet-500 to-teal-500 flex items-center justify-center">
                     <div className="text-white text-center p-6">
                       <div className="text-sm font-semibold mb-2 bg-white/20 inline-block px-3 py-1 rounded-full">
                         {post.category}
@@ -88,7 +88,7 @@ export default function Blog() {
                       <span>{post.readTime}</span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-blue-700 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-violet-700 transition-colors">
                       <Link href={`/blog/${post.slug}`}>
                         {post.title}
                       </Link>
@@ -102,7 +102,7 @@ export default function Blog() {
                       <span className="text-sm text-gray-500">By {post.author}</span>
                       <Link 
                         href={`/blog/${post.slug}`}
-                        className="text-blue-700 font-semibold hover:text-cyan-600 transition-colors flex items-center"
+                        className="text-violet-700 font-semibold hover:text-teal-600 transition-colors flex items-center"
                       >
                         Read More
                         <svg className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -131,9 +131,9 @@ export default function Blog() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-violet-500"
               />
-              <button className="px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition-colors duration-300">
+              <button className="px-6 py-3 bg-violet-700 text-white rounded-lg font-semibold hover:bg-violet-800 transition-colors duration-300">
                 Subscribe
               </button>
             </div>
