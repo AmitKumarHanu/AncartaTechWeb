@@ -3,10 +3,10 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --primary: #1e40af;
-  --secondary: #374151;
-  --accent: #06b6d4;
+  --foreground: #0f172a;
+  --primary: #6d28d9;
+  --secondary: #334155;
+  --accent: #14b8a6;
   --accent-green: #10b981;
 }
 
@@ -23,8 +23,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #070a18;
+    --foreground: #f1f5f9;
+    --primary: #a78bfa;
+    --secondary: #94a3b8;
+    --accent: #5eead4;
+    --accent-green: #4ade80;
   }
 }
 
