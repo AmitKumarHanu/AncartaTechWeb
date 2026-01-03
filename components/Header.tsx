@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-violet-700">Ancarta</span>
+              <span className="text-2xl font-bold text-blue-700">Ancarta</span>
               <span className="text-2xl font-light text-gray-700 dark:text-gray-300 ml-1">Technologies</span>
             </Link>
           </div>
@@ -37,8 +37,8 @@ export default function Header() {
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${
                     isActive(item.href)
-                      ? 'text-violet-700 bg-violet-50'
-                      : 'text-gray-700 hover:text-violet-700 hover:bg-violet-50 dark:text-gray-300 dark:hover:text-violet-400'
+                      ? 'text-blue-700 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50 dark:text-gray-300 dark:hover:text-blue-400'
                   }`}
                 >
                   {item.name}
@@ -76,8 +76,8 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
                     isActive(item.href)
-                      ? 'text-violet-700 bg-violet-50'
-                      : 'text-gray-700 hover:text-violet-700 hover:bg-violet-50'
+                      ? 'text-blue-700 bg-blue-50'
+                      : 'text-gray-700 hover:text-blue-700 hover:bg-blue-50'
                   }`}
                 >
                   {item.name}
