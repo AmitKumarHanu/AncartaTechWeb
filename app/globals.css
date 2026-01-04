@@ -5,18 +5,34 @@
   --background: #ffffff;
   --foreground: #0f172a;
   --primary: #1e40af;
+  --primary-light: #3b82f6;
+  --primary-dark: #1e3a8a;
   --secondary: #374151;
+  --secondary-light: #6b7280;
   --accent: #06b6d4;
   --accent-green: #10b981;
+  --accent-light: #22d3ee;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --ring: #1e40af;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
   --color-accent: var(--accent);
   --color-accent-green: var(--accent-green);
+  --color-accent-light: var(--accent-light);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
   --font-sans: 'Inter', var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -26,20 +42,35 @@
     --background: #070a18;
     --foreground: #f1f5f9;
     --primary: #60a5fa;
+    --primary-light: #93c5fd;
+    --primary-dark: #3b82f6;
     --secondary: #94a3b8;
+    --secondary-light: #cbd5e1;
     --accent: #67e8f9;
     --accent-green: #4ade80;
+    --accent-light: #a5f3fc;
+    --muted: #1e293b;
+    --muted-foreground: #94a3b8;
+    --border: #334155;
+    --ring: #60a5fa;
   }
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
 }
 
-* {
-  scroll-behavior: smooth;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 @keyframes fadeIn {
@@ -50,6 +81,39 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -65,12 +129,50 @@ body {
   }
 }
 
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.6s ease-out forwards;
 }
 
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.6s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 0.6s ease-out forwards;
+}
+
 .animate-blob {
   animation: blob 7s infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
 }
 
 .animation-delay-2000 {
@@ -81,6 +183,50 @@ body {
   animation-delay: 4s;
 }
 
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-700 {
+  animation-delay: 0.7s;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Blog content styles */
 .blog-content h2 {
   font-size: 2rem;
   font-weight: 700;
@@ -118,4 +264,23 @@ body {
 .blog-content strong {
   font-weight: 600;
   color: #1f2937;
+}
+
+@media (prefers-color-scheme: dark) {
+  .blog-content h2 {
+    color: #f1f5f9;
+  }
+  
+  .blog-content h3 {
+    color: #e2e8f0;
+  }
+  
+  .blog-content p,
+  .blog-content li {
+    color: #cbd5e1;
+  }
+  
+  .blog-content strong {
+    color: #f1f5f9;
+  }
 }
