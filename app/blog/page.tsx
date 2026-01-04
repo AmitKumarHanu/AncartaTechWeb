@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import Hero from '@/components/Hero';
-import Link from 'next/link';
+import BlogPostCard from '@/components/BlogPostCard';
+import Button from '@/components/Button';
 
 export const metadata = {
   title: 'Blog & Insights | Ancarta Technologies',
@@ -53,7 +54,26 @@ const blogPosts = [
     category: 'Security',
     author: 'David Thompson',
     readTime: '9 min read'
+  },
+  {
+    slug: 'microservices-architecture-benefits',
+    title: 'Why Microservices Architecture is the Future of Enterprise Software',
+    excerpt: 'Understand the key benefits of microservices architecture and how it can help your organization scale efficiently.',
+    date: '2023-12-15',
+    category: 'Architecture',
+    author: 'Alex Kumar',
+    readTime: '7 min read'
   }
+];
+
+const categories = [
+  'All',
+  'Cloud Computing',
+  'Software Development',
+  'Mobile Development',
+  'Project Management',
+  'Security',
+  'Architecture'
 ];
 
 export default function Blog() {
@@ -68,50 +88,28 @@ export default function Blog() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
+            <div className="mb-10">
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category, index) => (
+                  <button
+                    key={category}
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                      index === 0
+                        ? 'bg-blue-700 text-white'
+                        : 'bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-700'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogPosts.map((post, index) => (
-                <article 
-                  key={index} 
-                  className="bg-white border border-gray-200 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
-                >
-                  <div className="h-48 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                    <div className="text-white text-center p-6">
-                      <div className="text-sm font-semibold mb-2 bg-white/20 inline-block px-3 py-1 rounded-full">
-                        {post.category}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="p-6">
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-3">
-                      <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                      <span>{post.readTime}</span>
-                    </div>
-
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 hover:text-blue-700 transition-colors">
-                      <Link href={`/blog/${post.slug}`}>
-                        {post.title}
-                      </Link>
-                    </h3>
-
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500">By {post.author}</span>
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="text-blue-700 font-semibold hover:text-cyan-600 transition-colors flex items-center"
-                      >
-                        Read More
-                        <svg className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
-                </article>
+                <div key={index} className="animate-fadeIn" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <BlogPostCard {...post} />
+                </div>
               ))}
             </div>
           </div>
@@ -133,9 +131,9 @@ export default function Blog() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <button className="px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold hover:bg-blue-800 transition-colors duration-300">
+              <Button variant="primary">
                 Subscribe
-              </button>
+              </Button>
             </div>
           </div>
         </div>

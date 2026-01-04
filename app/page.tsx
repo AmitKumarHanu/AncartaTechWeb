@@ -2,7 +2,14 @@ import React from 'react';
 import Layout from '@/components/Layout';
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
-import Button from '@/components/Button';
+import Testimonials from '@/components/Testimonials';
+import TrustIndicators from '@/components/TrustIndicators';
+import CTASection from '@/components/CTASection';
+
+export const metadata = {
+  title: 'Home',
+  description: 'Ancarta Technologies - Experts in IT Consulting & Custom Software Development. Smart Solutions for a Digital World. We deliver innovative software solutions for startups, SMEs, and enterprise clients.',
+};
 
 export default function Home() {
   const services = [
@@ -94,27 +101,30 @@ export default function Home() {
   ];
 
   const trustIndicators = [
-    { number: '10+', label: 'Years of Experience' },
-    { number: '500+', label: 'Projects Completed' },
-    { number: '98%', label: 'Client Satisfaction' },
-    { number: '50+', label: 'Expert Team Members' }
+    { number: '10+', label: 'Years of Experience', suffix: '' },
+    { number: '500', label: 'Projects Completed', suffix: '+' },
+    { number: '98', label: 'Client Satisfaction', suffix: '%' },
+    { number: '50', label: 'Expert Team Members', suffix: '+' }
   ];
 
   const testimonials = [
     {
       quote: 'Ancarta Technologies transformed our legacy systems into a modern, cloud-based solution. Their expertise and professionalism exceeded our expectations.',
       author: 'Sarah Johnson',
-      role: 'CTO, TechCorp Inc.',
+      role: 'CTO',
+      company: 'TechCorp Inc.'
     },
     {
       quote: 'The custom software they developed has significantly improved our operational efficiency. The team was responsive and delivered on time.',
       author: 'Michael Chen',
-      role: 'Operations Director, GlobalTrade',
+      role: 'Operations Director',
+      company: 'GlobalTrade'
     },
     {
       quote: 'Working with Ancarta was a game-changer for our startup. They understood our vision and built a scalable platform that grows with us.',
       author: 'Emily Rodriguez',
-      role: 'Founder & CEO, InnovateLabs',
+      role: 'Founder & CEO',
+      company: 'InnovateLabs'
     }
   ];
 
@@ -148,68 +158,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Why Choose <span className="text-blue-700">Ancarta</span>
-          </h2>
+      <TrustIndicators
+        title="Why Choose Ancarta"
+        indicators={trustIndicators}
+        variant="cards"
+      />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {trustIndicators.map((indicator, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl">
-                <div className="text-4xl md:text-5xl font-bold text-blue-700 mb-2">
-                  {indicator.number}
-                </div>
-                <div className="text-gray-600 font-medium">{indicator.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Testimonials
+        title="What Our Clients Say"
+        testimonials={testimonials}
+      />
 
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            What Our Clients Say
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <svg className="h-10 w-10 text-cyan-500 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <p className="text-gray-700 mb-6 italic leading-relaxed">
-                  {testimonial.quote}
-                </p>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gradient-to-r from-blue-700 to-cyan-600 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Let&apos;s discuss how our custom software solutions can help you achieve your business goals.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-700 bg-transparent">
-              Get in Touch
-            </Button>
-            <Button href="/services" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-700 bg-white text-blue-700">
-              View All Services
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTASection
+        title="Ready to Transform Your Business?"
+        description="Let's discuss how our custom software solutions can help you achieve your business goals."
+        primaryCTA={{
+          text: 'Get in Touch',
+          href: '/contact'
+        }}
+        secondaryCTA={{
+          text: 'View All Services',
+          href: '/services'
+        }}
+        variant="primary"
+      />
     </Layout>
   );
 }
